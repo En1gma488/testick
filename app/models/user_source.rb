@@ -1,0 +1,3 @@
+class UserSource < ApplicationRecord
+	
+end
