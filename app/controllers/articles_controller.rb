@@ -1,10 +1,8 @@
 class ArticlesController < ApplicationController
-	#def index
-	 #  @articles = HTTParty.get('https://newsapi.org' )
-  	#end
-	require 'Parser'
+
+	#require 'ParserService'
   	def show
-  		@search_term = "us"
-	    @articles = Parser.top_headlines(@search_term)
+		@search_term = "us"
+		@articles = ParserService.top_headlines(@search_term)
   	end
 end

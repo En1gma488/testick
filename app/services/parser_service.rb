@@ -1,4 +1,4 @@
-class Parser
+class ParserService
   include HTTParty
   API_KEY = '882e10dd2b474a23bb7a3efa85e66b61'.freeze
   base_uri 'https://newsapi.org/v2/'
@@ -17,9 +17,3 @@ class Parser
     response = self.class.get("/top-headlines", @options)
   end
 end
-
-
-
-
-
-
