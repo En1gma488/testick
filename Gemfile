@@ -41,6 +41,9 @@ gem 'bootstrap', '~> 4.3'
 gem 'materialize-sass'
 gem 'httparty', '~> 0.13.7'
 gem 'news-api', '~> 0.0.0'
+gem 'will_paginate'
+gem "pundit"
+gem 'pry-rails', :group => :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
