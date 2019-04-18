@@ -4,12 +4,12 @@ class CreateArticles < ActiveRecord::Migration[5.2]
 
     t.belongs_to :source
 
-   	t.string :title,				null: false, default: ""
-   	t.string :description,	null: false, default: ""
-   	t.string :url,					null: false, default: ""
-   	t.string :url_to_image,	null: false, default: ""
+   	t.string :title,				default: ""
+   	t.string :description,	default: ""
+   	t.string :url,					default: ""
+   	t.string :url_to_image,	default: ""
    	t.datetime :published_at
-   	t.string :content,			null: false, default: ""
+   	t.string :content,			default: ""
     t.timestamps
     end
   end

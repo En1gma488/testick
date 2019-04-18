@@ -1,0 +1,17 @@
+<h1>Users</h1>
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Last name</th>
+		<th>Email</th>
+		<th>Roll</th>
+	</tr>
+	<% @users.each do |user| %>
+	      <td><%= user.first_name %></td>
+	      <td><%= user.last_name %></td>
+	      <td><%= user.email %></td>
+	      <td><%= user.roll %></td>
+	      <td><%= link_to "Delete user" %></td>
+	    </tr>
+	<%end %>
+</table>

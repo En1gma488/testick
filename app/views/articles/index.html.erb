@@ -1,7 +1,7 @@
-
-
 <h1> Articles </h1>
-
+ <%= link_to "render new articles", article_fatch_import_path %>
+ <br>
+ <%= link_to "render new source", article_source_import_path %>
 <table>
 	<tr>
 		<th>Title</th>
@@ -9,9 +9,11 @@
 		<th>Content</th>
 	</tr>
    <% @articles.each do |article| %>
-      <td><%= article.title %></td>
-
+      <td><%= link_to article.title, article_path(article)  %></td>  
+      <td><%= article.description %></td>
+      <td><%= article.content %></td>
     </tr>
-      <%end %>
+   <%end %>
+
 </table>
 

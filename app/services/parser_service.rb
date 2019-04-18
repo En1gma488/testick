@@ -13,15 +13,27 @@ class ParserService
     @options = { query: { country: country_name, apiKey: API_KEY} }
   end
 
-    def top_headlines 
+  def top_headlines 
       response = self.class.get("/top-headlines", @options)
-      pars_json = response.parsed_response
-      pars_json['articles'].each do |k|
-        @source = ActiveModel::Source.create(google_id: k["id"], name: k["name"])
-        @article = Article.create(title: k["title"], source_id: k["source_id"],
-                                  description: k["description"], content: k["content"])
-       # @article = Article.create(title: k["title"], source_id: k["source_id"])
-      end
-    end  
+      @pars_json = response.parsed_response
+  end
+
+  def render_article
+    top_headlines
+    @pars_json["articles"].each do |k|
+      @source = NewsSource.find_or_create_by!(name: k["name"])
+    end
+  end
+
+  def render_source
+    top_headlines
+    @pars_json["articles"].each do |k|
+        @articles = Article.find_or_create_by(title: k["title"],
+                                               source_id: NewsSource.find_by_name(k["name"]),
+                                               content: k["content"],
+                                               description: k["description"])
+    end
+  end
+
 end
 
