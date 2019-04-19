@@ -7,7 +7,7 @@ class ApplicationPolicy
   end
 
   def index?
-    user.admin?
+    false
   end
 
   def show?

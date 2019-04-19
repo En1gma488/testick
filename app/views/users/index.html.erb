@@ -1,4 +1,5 @@
 <h1>Users</h1>
+<%= link_to "Back", :back %>
 <table>
 	<tr>
 		<th>Name</th>
@@ -11,7 +12,7 @@
 	      <td><%= user.last_name %></td>
 	      <td><%= user.email %></td>
 	      <td><%= user.roll %></td>
-	      <td><%= link_to "Delete user" %></td>
+	      <td><%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: "Are you sure?"} %></td>
 	    </tr>
 	<%end %>
 </table>

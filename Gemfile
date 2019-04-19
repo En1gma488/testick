@@ -42,7 +42,11 @@ gem 'materialize-sass'
 gem 'httparty', '~> 0.13.7'
 gem 'news-api', '~> 0.0.0'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem "pundit"
+gem 'sidekiq', '~> 5.0', '>= 5.0.5'
+
+
 gem 'pry-rails', :group => :development
 
 group :development, :test do

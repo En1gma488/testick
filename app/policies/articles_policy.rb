@@ -1,3 +1,3 @@
-class ArticlesPolicy < ApplicationPolicy
+# class ArticlesPolicy < ApplicationPolicy
   
-end
+# end

@@ -15,3 +15,26 @@
  */
 
  @import "materialize";
+
+.will_pagin{
+	margin-top: 25px;
+}
+
+.pagination li{
+  border-radius: 5px;
+  color: black;
+  text-decoration: none;
+
+}
+
+.pagination li span {
+  border-radius: 5px;
+  color: black;
+  padding: 8px 16px;
+  text-decoration: none;
+  vertical-align: -webkit-baseline-middle;
+}
+
+.pagination a.active {
+  border-radius: 5px;
+}

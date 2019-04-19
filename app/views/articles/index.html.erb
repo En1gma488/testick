@@ -2,18 +2,40 @@
  <%= link_to "render new articles", article_fatch_import_path %>
  <br>
  <%= link_to "render new source", article_source_import_path %>
+  <br>
+ <%= link_to "users", users_path %> <br>
+ <%= link_to "sing out", destroy_user_session_path, method: :delete %> <br>
+
+ <% if user_signed_in? %>
+  <%= link_to 'Edit registration', edit_user_registration_path  %>
+<% else %>
+  <%= link_to 'sing in', new_user_registration_path %>
+<% end %>
+<br>
+
+ <%= link_to 'Create new article', new_article_path %>
+
+
+
 <table>
 	<tr>
 		<th>Title</th>
 		<th>Description</th>
 		<th>Content</th>
+    <th>Link</th>
 	</tr>
    <% @articles.each do |article| %>
       <td><%= link_to article.title, article_path(article)  %></td>  
       <td><%= article.description %></td>
       <td><%= article.content %></td>
+      <td><a href="<%= article.url %>"> <%= article.news_source %>  </a>
+    </td>
     </tr>
    <%end %>
 
 </table>
+
+<div class="will_pagin">
+    <%= will_paginate @articles,renderer: BootstrapPagination::Rails, previous_label: "Туда", next_label: "Сюда", inner_window: 1, outer_window: 1 %></div>
+
 
