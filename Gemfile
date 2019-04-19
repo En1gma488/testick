@@ -44,7 +44,8 @@ gem 'news-api', '~> 0.0.0'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem "pundit"
-gem 'sidekiq', '~> 5.0', '>= 5.0.5'
+gem 'sidekiq'
+gem 'redis-rails'
 
 
 gem 'pry-rails', :group => :development
