@@ -46,6 +46,7 @@ gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
 gem "pundit"
 gem 'sidekiq'
 gem 'redis-rails'
+gem 'minitest',  '~> 5.11.3'
 
 
 gem 'pry-rails', :group => :development

@@ -299,6 +299,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   materialize-sass
+  minitest (~> 5.11.3)
   news-api (~> 0.0.0)
   pg (>= 0.18, < 2.0)
   pry-rails

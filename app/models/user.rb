@@ -11,4 +11,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
           :rememberable, :validatable
+
+  def set_default_role
+    self.role ||= :user
+  end
+  
 end

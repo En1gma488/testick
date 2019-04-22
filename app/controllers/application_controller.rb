@@ -1,13 +1,25 @@
 class ApplicationController < ActionController::Base
-	# include Pundit
-	# rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+	include Pundit
+	protect_from_forgery with: :exception
+	after_action :verify_authorized
+ 	before_action :authenticate_user!
+	rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 	# before_action :verify_authorized, except: :index
 
-	# private
+    before_action :configure_permitted_parameters, if: :devise_controller?
 
-	# 	def user_not_authorized
-	# 		flash[:alert] = "Access denied"
-	# 		redirect_to (request.reffer || root_path)
-	# 	end
+     protected
+
+        def configure_permitted_parameters
+            devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password)}
+            devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:first_name, :last_name, :email, :password, :current_password)}
+        end
+
+
+		def user_not_authorized
+			flash[:alert] = "Access denied"
+			redirect_to (root_path)
+		end
+
 end
 

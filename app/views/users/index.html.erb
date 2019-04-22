@@ -16,3 +16,16 @@
 	    </tr>
 	<%end %>
 </table>
+
+
+<div class="bigbox">
+	<div class="box">
+		<table class="table-minimal">
+			<% @users.each do |user| %>
+	      		<tr>
+	      			<%= render user%>
+	      		</tr>
+			<%end %>
+		</table>
+	</div>
+</div>

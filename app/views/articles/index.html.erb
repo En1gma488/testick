@@ -22,13 +22,12 @@
 		<th>Title</th>
 		<th>Description</th>
 		<th>Content</th>
-    <th>Link</th>
 	</tr>
    <% @articles.each do |article| %>
       <td><%= link_to article.title, article_path(article)  %></td>  
       <td><%= article.description %></td>
       <td><%= article.content %></td>
-      <td><a href="<%= article.url %>"> <%= article.news_source %>  </a>
+      <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>   </td>
     </td>
     </tr>
    <%end %>

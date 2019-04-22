@@ -3,6 +3,8 @@
 class Users::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
   # skip_after_action :verify_authorized, unless: :devise_controller?
+  after_action :verify_authorized, only: []
+  
 
   # GET /resource/sign_in
    #def new	

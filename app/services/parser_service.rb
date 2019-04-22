@@ -31,7 +31,8 @@ class ParserService
         @articles = Article.find_or_create_by(title: k["title"],
                                                source_id: NewsSource.find_by_name(k["name"]),
                                                content: k["content"],
-                                               description: k["description"])
+                                               description: k["description"],
+                                               url: k["url"])
     end
   end
 

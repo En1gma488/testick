@@ -1,11 +1,6 @@
-# class UserPolicy < ApplicationPolicy
-#   attr_reader :user, :record
+class UserPolicy < ApplicationPolicy
 
-#   def index?
-#     user.user?
-#   end
-
-#   def show?
-#     true
-#   end
-# end
+  def index?
+    admin_user?
+  end
+end

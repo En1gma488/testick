@@ -1,13 +1,14 @@
 class ApplicationPolicy
-  attr_reader :user, :record
+  attr_reader :user, :current_user
 
-  def initialize(user, record)
+  def initialize(user, current_user)
     @user = user
-    @record = record
+    @current_user = current_user
+
   end
 
   def index?
-    false
+    # true
   end
 
   def show?
@@ -15,7 +16,7 @@ class ApplicationPolicy
   end
 
   def create?
-    false
+    true
   end
 
   def new?
@@ -33,6 +34,24 @@ class ApplicationPolicy
   def destroy?
     false
   end
+
+  protected
+
+  def admin_user?
+     user.present? && user.admin?
+  end
+
+  # def redactor_user?
+  #   user.present? && user.redactor?
+  # end
+
+  # def deactivated_user?
+  #   user.present? && user.deactivated?
+  # end
+
+  # def activated_user?
+  #   user.present? && user.activated?
+  # end
 
   class Scope
     attr_reader :user, :scope
