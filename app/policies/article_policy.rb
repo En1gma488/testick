@@ -8,6 +8,7 @@ class ArticlePolicy < ApplicationPolicy
     # admin_user? || @user == @current_user
     # user.present?
     user.user? || user.admin?
+    # admin_user? && activated_user?
     # true
   end
 

@@ -41,17 +41,13 @@ class ApplicationPolicy
      user.present? && user.admin?
   end
 
-  # def redactor_user?
-  #   user.present? && user.redactor?
-  # end
+  def deactivated_user?
+    user.present? && user.deactivated?
+  end
 
-  # def deactivated_user?
-  #   user.present? && user.deactivated?
-  # end
-
-  # def activated_user?
-  #   user.present? && user.activated?
-  # end
+  def activated_user?
+    user.present? && user.activated?
+  end
 
   class Scope
     attr_reader :user, :scope

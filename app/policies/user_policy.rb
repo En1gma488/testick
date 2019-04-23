@@ -2,15 +2,13 @@ class UserPolicy < ApplicationPolicy
 
   def index?
     admin_user?
-  end
-
-  def index?
-    admin_user?
+    # admin_user? && activated_user?
   end
 
   def show?
-    @user.admin? && user.user?
-    # @user.admin?
+    # @user.admin? && user.user?
+    @user.admin?
+     # admin_user? || @user == @current_user
   end
 
   def create?
