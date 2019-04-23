@@ -57,7 +57,7 @@ class ArticlesController < ApplicationController
   	def fatch_import
   		ParserService.new.render_article
   		redirect_to articles_path
-  		flash[:success] = "You have updated"
+  		flash[:success] = "Articles updated"
   	end
 
   	def source_import
@@ -68,6 +68,6 @@ class ArticlesController < ApplicationController
   	private
 	  def article_params
 	   params.require(:article).permit(:source_id, :title, :description, :url, :url_to_image,
-    									:published_at)
+    									:published_at, :image)
 	  end
 end

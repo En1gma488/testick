@@ -1,0 +1,15 @@
+<%= form_with model: @user, local: true do |f| %>
+  <h4><%= f.label :Status %></h4>
+  <td><%=  @user.status.to_s.capitalize %></td>
+  <p></p>
+  <h4><%= f.label :Email %></h4>
+  <td><%=  @user.email %></td>
+  <p></p>
+  <h4><%= f.label :Your_sources %></h4>
+  <% @user_sources.each do |user_source| %>
+    <li><%= user_source.name %> </li>
+    <% end %>
+  <p></p>
+  <%= link_to('Back to news', root_path , class:"btn btn-sm btn-outline-secondary") %>
+
+<% end %>

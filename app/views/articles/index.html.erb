@@ -1,37 +1,6 @@
 <h1> Daily Mail Ukraine </h1>
 <div class="main_buttons">
-
-  <div class="button_to">
-   <%= link_to "Render new articles", article_fatch_import_path, class: "waves-effect waves-light btn-small" %>
-  </div>
-
-  <div class="button_to">
-   <%= link_to "Render new source", article_source_import_path, class: "waves-effect waves-light btn-small" %>
-  </div>
-
-  <div class="button_to">
-    <% if policy(@articles).create? %>
-      <%= link_to 'Create new article', new_article_path, class: "waves-effect waves-light btn-small" %>
-    <% end %>
-  </div>
-
-  <div class="button_to">
-    <% if policy(@articles).update? %>
-     <%= link_to "Show all users", users_path, class: "waves-effect waves-light btn-small" %> 
-    <% end %>
-  </div>
-
-  <div class="button_to">
-    <%= link_to "Sing out", destroy_user_session_path, method: :delete, class: "waves-effect waves-light btn-small" %>
-  </div>
-
-  <div class="button_to">
-  <% if user_signed_in? %>
-    <%= link_to 'Edit registration', edit_user_registration_path, class: "waves-effect waves-light btn-small"   %>
-  <% else %>
-    <%= link_to 'sing in', new_user_registration_path, class: "waves-effect waves-light btn-small" %>
-  <% end %>
-  </div>
+  <%= render 'button_admin' %>
 </div>
 
 

@@ -1,5 +1,6 @@
 <%= form_for(user) do |f| %>
 	<td><%= f.select(:roll, User.rolls.keys.map {|roll| [roll.titleize, roll]}) %></td>
+	<td><%= f.select(:status, User.statuses.keys.map {|status| [status.titleize,status]}) %></td>
 	<td><%= f.submit 'Change Role' %></td>
 <% end %>
 

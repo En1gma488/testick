@@ -269,3 +269,11 @@ footer {
 select{
   display: block !important;
 }
+
+.page_image{
+  width: 100%;
+}
+
+.page_image img{
+  height: 400px;
+}
