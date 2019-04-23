@@ -8,7 +8,7 @@ class ApplicationPolicy
   end
 
   def index?
-    # true
+    true
   end
 
   def show?
@@ -20,19 +20,19 @@ class ApplicationPolicy
   end
 
   def new?
-    create?
+    true
   end
 
   def update?
-    false
+    true
   end
 
   def edit?
-    update?
+    true
   end
 
   def destroy?
-    false
+    true
   end
 
   protected

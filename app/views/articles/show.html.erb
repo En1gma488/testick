@@ -1,16 +1,20 @@
 
+<div class="show_article_page">
+<h2 class="super_article"><%= @article.title %></h2>
+	
+
+	<h3>
+	  <%= @article.description %>
+	</h3>
 
 	<p>
-	  <%= @article.title %><br>
-	</p>
-
-	<p>
-	  <%= @article.description %><br>
-	</p>
-
-	<p>
-	  <%= @article.content %><br>
+	  <%= @article.content %>
 	</p>
 
 
-	<%= link_to "Source article", @article.url %>
+	<%= link_to "Source article", @article.url, class: "waves-effect waves-light btn-small" %>
+	<%= link_to "Home Page", articles_path, class: "waves-effect waves-light btn-small" %>
+	<% if policy(@article).update? %>
+		<%= link_to 'Edit', edit_article_path(@article), class: "waves-effect waves-light btn-small" %>
+	<%end %>
+</div>

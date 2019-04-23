@@ -1,31 +1,21 @@
 <h1>Users</h1>
-<%= link_to "Back", :back %>
+<%= link_to "Back", :back, class: "waves-effect waves-light btn-small" %>
+<%= link_to "Home Page", articles_path, class: "waves-effect waves-light btn-small" %>
 <table>
 	<tr>
 		<th>Name</th>
 		<th>Last name</th>
 		<th>Email</th>
-		<th>Roll</th>
+		<th>Role</th>
+		<th>Change Role</th>
 	</tr>
 	<% @users.each do |user| %>
 	      <td><%= user.first_name %></td>
 	      <td><%= user.last_name %></td>
 	      <td><%= user.email %></td>
-	      <td><%= user.roll %></td>
+	      <%= render user %>
 	      <td><%= link_to 'Delete', user_path(user), method: :delete, data: {confirm: "Are you sure?"} %></td>
 	    </tr>
 	<%end %>
 </table>
 
-
-<div class="bigbox">
-	<div class="box">
-		<table class="table-minimal">
-			<% @users.each do |user| %>
-	      		<tr>
-	      			<%= render user%>
-	      		</tr>
-			<%end %>
-		</table>
-	</div>
-</div>
