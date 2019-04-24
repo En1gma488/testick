@@ -21,7 +21,7 @@ class ParserService
   def render_article
     top_headlines
     @pars_json["articles"].each do |k|
-      @source = NewsSource.find_or_create_by!(name: k["name"])
+      @source = NewsSource.find_or_create_by!(name: k["source"]["name"])
     end
   end
 
@@ -29,10 +29,11 @@ class ParserService
     top_headlines
     @pars_json["articles"].each do |k|
         @articles = Article.find_or_create_by(title: k["title"],
-                                               source_id: NewsSource.find_by_name(k["name"]),
+                                               source_id: NewsSource.find_by_name(k["source"]["name"]),
                                                content: k["content"],
                                                description: k["description"],
-                                               url: k["url"])
+                                               url: k["url"], 
+                                               published_at: k['publishedAt'])
     end
   end
 

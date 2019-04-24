@@ -7,7 +7,9 @@ class UserPolicy < ApplicationPolicy
 
   def show?
     # @user.admin? && user.user?
-    @user.admin?
+    # @user.admin?
+    user.admin? && user.present? && user.activated?
+    
      # admin_user? || @user == @current_user
   end
 

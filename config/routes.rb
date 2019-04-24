@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
       devise_for :users, controllers: { sessions: 'users/sessions', registration: 'users/registration'  }
 	
-      resources :articles
+      resources :articles 
       resources :users
-      resources :sources
+      resources :news_sources
 
       root to: 'articles#index'
       

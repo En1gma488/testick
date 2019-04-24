@@ -6,8 +6,8 @@ class UsersController < ApplicationController
 	end
 	def show
   		@user = User.find(params[:id])
-	    @user_sources = Source.find(@user.source_ids)
-	    authorize @user
+		@user_sources = NewsSource.find(@user.news_source_ids)
+		authorize @user
 	end
 
 	def update
@@ -28,6 +28,6 @@ class UsersController < ApplicationController
 
 	private
 	def user_params
-	  params.require(:user).permit(:roll, :status)
+	  params.require(:user).permit(:roll, :status, article_source_ids: [])
 	end
 end

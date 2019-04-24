@@ -20,6 +20,8 @@
       <% if policy(@articles).destroy? %>
        <td><%= link_to 'Delete', article_path(article), method: :delete, data: {confirm: "Are you sure?"} %></td>
        <% end %>
+
+       
     </td>
     </tr>
    <%end %>
@@ -28,5 +30,4 @@
 
 <div class="will_pagin">
     <%= will_paginate @articles,renderer: BootstrapPagination::Rails, previous_label: "Туда", next_label: "Сюда", inner_window: 1, outer_window: 1 %></div>
-
 

@@ -7,6 +7,10 @@
   </div>
 
   <div class="button_to">
+   <%= link_to "Categories", news_sources_path, class: "waves-effect waves-light btn-small" %>
+  </div>
+
+  <div class="button_to">
     <% if policy(@articles).create? %>
       <%= link_to 'Create new article', new_article_path, class: "waves-effect waves-light btn-small" %>
     <% end %>
@@ -29,3 +33,4 @@
     <%= link_to 'sing in', new_user_registration_path, class: "waves-effect waves-light btn-small" %>
   <% end %>
   </div>
+

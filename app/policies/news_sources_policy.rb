@@ -8,13 +8,14 @@ class ArticlePolicy < ApplicationPolicy
     # admin_user? || @user == @current_user
     # user.present?
     # user.user? || user.admin?
-    activated_user? || user.admin?
-    # true
+    # user.admin? && activated_user?
+    true
   end
 
   def create?
     # admin_user? && activated_user?
-    @user.admin?
+    # @user.admin?
+    true
   end
 
   def new?
@@ -22,7 +23,7 @@ class ArticlePolicy < ApplicationPolicy
   end
 
   def update?
-    @user.admin?
+    @user.admin?  
   end
 
   def edit?

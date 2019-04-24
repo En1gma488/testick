@@ -4,8 +4,9 @@ class User < ApplicationRecord
   enum roll: [:user, :admin]
   enum status: [:deactivated, :activated]
 
-  has_many :user_source 
-  has_many :news_source, through: :user_source #
+  has_many :user_sources
+  has_many :news_sources, through: :user_sources, foreign_key: 'source_id'
+  has_many :articles, through: :user_sources
 
   validates :first_name, :last_name, presence: true, length: { in: 2..25 }
   validates :email, presence: true, uniqueness: true, format: { with: URI::MailTo::EMAIL_REGEXP, message: "only allows valid emails" }
