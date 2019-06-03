@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2019_04_23_200946) do
     t.integer "roll", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "status"
+    t.integer "status", default: 1, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

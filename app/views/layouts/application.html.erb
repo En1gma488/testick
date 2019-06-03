@@ -11,8 +11,13 @@
 
   <body>
 
+      <% if signed_in? -%>
+  <div class="button_to" style="padding-left: 50%">
+   <%= link_to "Home", root_path, class: "waves-effect waves-light btn-small"%>
+   <% end -%>
+  </div>
+
     <div class="container">
-      <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>  
       <%= yield %>
     <%= render "layouts/footer" %>
