@@ -39,7 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'bootstrap', '~> 4.3'
 gem 'materialize-sass'
-gem 'httparty', '~> 0.13.7'
+gem 'httparty', '~> 0.21.0'
 gem 'news-api', '~> 0.0.0'
 gem 'will_paginate'
 gem 'will_paginate-bootstrap', '~> 1.0', '>= 1.0.1'
